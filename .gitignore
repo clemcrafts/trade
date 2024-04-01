@@ -1,0 +1,35 @@
+# Build directories
+/build/
+/cmake-build-debug/
+/cmake-build-release/
+/debug/
+/release/
+/.vscode/
+
+# Compiled object files
+*.o
+*.obj
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled executables
+*.exe
+*.out
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+
+# IDE files
+.vscode/
+.idea/
+
+# Dependency directories
+/vendor/
+
+# Compiled output
+/bin/
