@@ -1,11 +1,11 @@
 # Project Trade
 
 Project Trade is a C++ application designed to interact with the Binance API for trading purposes.
-## Compilation Instructions
+## I. Compilation Instructions
 
 To compile the project from source, follow these steps:
 
-### 1. Build the project
+### 1. Build the Project on your Local Machine
 
 ```
 mkdir build && cd build
@@ -13,13 +13,13 @@ cmake ..
 make
 ```
 
-### 2. Run the application
+### 2. Run the Application
 
 ```
 ./src/trade
 ```
 
-### Using Docker
+### II. Build and Run the Project Using Docker
 
 Building the Docker Image
 Navigate to the project directory and run:
@@ -35,5 +35,3 @@ To run your project in a Docker container, execute:
 ```
 docker run --name tradecontainer trade
 ```
-
-
