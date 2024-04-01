@@ -1,0 +1,8 @@
+# Define the trade executable
+add_executable(trade trade.cpp)
+
+# Link the CPR library
+target_link_libraries(trade PRIVATE cpr::cpr)
+
+# Link the OpenSSL libraries
+target_link_libraries(trade PRIVATE OpenSSL::SSL OpenSSL::Crypto)
