@@ -1,8 +1,31 @@
-# Define the trade executable
+cmake_minimum_required(VERSION 3.10)
+project(trade)
+
+# Find required packages
+find_package(CURL REQUIRED)
+find_package(OpenSSL REQUIRED)
+
+# Include nlohmann_json using FetchContent
+include(FetchContent)
+FetchContent_Declare(
+  json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG v3.10.5  # Adjust the tag as needed
+)
+FetchContent_MakeAvailable(json)
+
+# Define the executable
 add_executable(trade trade.cpp)
 
-# Link the CPR library
-target_link_libraries(trade PRIVATE cpr::cpr)
+# Include directories
+include_directories(${CURL_INCLUDE_DIRS})
+include_directories(${OPENSSL_INCLUDE_DIR})
 
-# Link the OpenSSL libraries
-target_link_libraries(trade PRIVATE OpenSSL::SSL OpenSSL::Crypto)
+# Link libraries
+target_link_libraries(trade
+  PRIVATE
+    ${CURL_LIBRARIES}
+    nlohmann_json::nlohmann_json
+    OpenSSL::SSL
+    OpenSSL::Crypto
+)
