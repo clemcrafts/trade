@@ -19,3 +19,5 @@ RUN mkdir -p build && \
     cd build && \
     cmake .. && \
     make
+
+ENTRYPOINT ["./build/src/trade"]
